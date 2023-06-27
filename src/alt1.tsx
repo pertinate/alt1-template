@@ -23,7 +23,13 @@ export const AltGuard = () => {
             <p>
                 Click{" "}
                 <a
-                    href={`alt1://addapp/${window.location.protocol}//${window.location.host}/appconfig.json`}
+                    href={`alt1://addapp/${window.location.protocol}//${
+                        window.location.host
+                    }/appconfig${
+                        !window.location.host.includes("localhost")
+                            ? ".prod"
+                            : ""
+                    }.json`}
                 >
                     here
                 </a>{" "}
