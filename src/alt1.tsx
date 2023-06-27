@@ -25,9 +25,13 @@ export const AltGuard = () => {
                 <a
                     href={`alt1://addapp/${window.location.protocol}//${
                         window.location.host
-                    }/appconfig${
+                    }/${
                         !window.location.host.includes("localhost")
-                            ? ".prod"
+                            ? "alt1-template/" //Include repo name (this is only for github pages)
+                            : ""
+                    }appconfig${
+                        !window.location.host.includes("localhost")
+                            ? ".prod" //Target prod (this is only for github pages)
                             : ""
                     }.json`}
                 >
