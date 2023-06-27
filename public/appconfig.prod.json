@@ -1,7 +1,7 @@
 {
     "appName": "Alt1 React Typescript Template",
     "description": "Alt1 React starter kit",
-    "appUrl": "./alt1-template/index.html",
+    "appUrl": "./index.html",
     "configUrl": "./alt1-template/appconfig.prod.json",
     "iconUrl": "icon.png",
     "defaultWidth": 250,
