@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import { getImageDataFromUrl } from "../util/alt1Util";
 import * as alt1 from "alt1";
-import { Group, Stack, Text, TextInput } from "@mantine/core";
-import ChatBoxReader, * as chatBox from "@alt1/chatbox";
+import { Stack, Text, TextInput } from "@mantine/core";
+import ChatBoxReader from "@alt1/chatbox";
 import { useStore } from "../store/store";
 
 const createNewReader = () => {
@@ -31,9 +30,7 @@ const createNewReader = () => {
 const Chatbox = () => {
     const store = useStore();
     const readerRef = useRef(createNewReader());
-    // const [ocr] = useState(new ChatBoxReader());
-    const [chatBox, setChatBox] = useState<string[]>([]);
-    // ocr.find();
+
     useEffect(() => {
         const interval = setInterval(() => {
             let chatLines = readerRef.current.read();
