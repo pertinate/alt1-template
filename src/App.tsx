@@ -1,40 +1,14 @@
-import {
-    Blockquote,
-    Button,
-    Group,
-    Stack,
-    Text,
-    TextInput,
-} from "@mantine/core";
+import { Blockquote, Button, Group, Stack, Text } from "@mantine/core";
 import { useStore } from "./store/store";
-import * as alt1 from "alt1";
-import { useEffect, useState } from "react";
-import { getImageDataFromUrl } from "./util/alt1Util";
+import ImageSearch from "./components/ImageSearch";
+import Chatbox from "./components/Chatbox";
 
 function App() {
     const store = useStore();
-    const [position, setPosition] = useState({ x: 0, y: 0 });
-    const image = alt1.captureHoldFullRs();
-    useEffect(() => {
-        getImageDataFromUrl("/homebutton.data.png").then((imageData) => {
-            if (imageData) {
-                const position = image.findSubimage(imageData);
-                if (position[0]) {
-                    setPosition(position[0]);
-                }
-            }
-        });
-    }, []);
     return (
         <main style={{ height: "100%" }}>
-            <Group>
-                <TextInput disabled label="X Coordinate" value={position.x} />
-                <TextInput disabled label="Y Coordinate" value={position.y} />
-            </Group>
-            <img
-                src={`data:image/png;base64,${image.toData().toPngBase64()}`}
-                width={"100%"}
-            />
+            <Chatbox />
+            <ImageSearch />
             <Stack>
                 <Text>{store.example.counter}</Text>
                 <Group>
