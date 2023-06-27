@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import * as alt1 from "alt1";
 import { Stack, Text, TextInput } from "@mantine/core";
-import ChatBoxReader from "@alt1/chatbox";
 import { useStore } from "../store/store";
+import OCRChat from "alt1/chatbox";
 
 const createNewReader = () => {
-    const reader = new ChatBoxReader();
+    const reader = new OCRChat();
 
     reader.readargs = {
         colors: [
